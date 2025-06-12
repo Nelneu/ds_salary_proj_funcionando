@@ -1,0 +1,16 @@
+Recommendations for Debugging the /train Endpoint 500 Error:
+
+The 500 Internal Server Error on POST requests to the `/train` endpoint indicates a significant server-side issue. To diagnose and resolve this, the following steps are recommended:
+
+1.  **Examine Detailed Application Logs:**
+    *   The `flask_api.log` provides a high-level view of the request and its status. However, for a 500 error, more detailed logs are crucial.
+    *   **Action:** Monitor the console output of the Flask development server (or the configured application logs if running in a production-like environment) at the exact time a POST request is sent to `/train`. This output typically contains a full Python traceback and more specific error messages originating from the application code (`app/main.py` or related modules). This traceback is essential for pinpointing the line(s) of code causing the failure.
+
+2.  **Reproduce the Error Consistently:**
+    *   To effectively debug, it's important to be able to reproduce the error reliably.
+    *   **Action:** Identify the exact conditions under which the error occurs. This might involve:
+        *   Using a consistent payload (e.g., a small, valid CSV file or JSON data) for the `/train` request.
+        *   Noting any specific user actions or data characteristics that trigger the error.
+        *   If the error is intermittent, try to identify any patterns (e.g., occurs after a certain number of requests, or with specific data).
+
+By capturing the detailed traceback and understanding how to reproduce the error, developers can more effectively isolate the bug within the `/train` endpoint's implementation and implement a fix.

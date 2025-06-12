@@ -1,0 +1,7 @@
+The application is a salary prediction tool.
+It exposes a Flask API with two main endpoints:
+- `/train`: This endpoint allows users to train a salary prediction model.
+- `/predict`: This endpoint allows users to predict salaries. Users can either use a default pre-trained model or a model they have trained themselves using the /train endpoint.
+
+While the README mentions a Streamlit web app, the core functionality implemented in `app/main.py` is the Flask API.
+This API serves as the backbone for the salary prediction service.
