@@ -1,0 +1,1 @@
+curl -X POST -F "dataset=@data/sample_salary_data.csv" http://127.0.0.1:5000/train

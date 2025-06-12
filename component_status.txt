@@ -1,0 +1,3 @@
+- `models/trained_salary_model.pkl`: Exists
+- `models/user_trained_model.pkl`: Exists
+- `data/sample_salary_data.csv`: Exists
