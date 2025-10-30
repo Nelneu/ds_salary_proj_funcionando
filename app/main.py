@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from werkzeug.utils import secure_filename
 
 # Attempt to import local modules
@@ -41,7 +41,13 @@ os.makedirs(app.config['MODEL_FOLDER'], exist_ok=True)
 
 @app.route('/', methods=['GET'])
 def home():
-    """Root endpoint returning a welcome message."""
+    """Root endpoint serving the web interface."""
+    return render_template('index.html')
+
+
+@app.route('/api', methods=['GET'])
+def api_info():
+    """API info endpoint returning a welcome message."""
     return jsonify({"message": "Salary Prediction API"})
 
 
